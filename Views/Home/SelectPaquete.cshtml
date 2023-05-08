@@ -1,3 +1,16 @@
 @{
     ViewData["Title"] = "SelectPaquete";
 }
+<form>
+    <h2>
+        Elige un destino
+        <select>
+            @foreach (var item in ViewBag.destinos)
+            {
+               <option value="@item"></option> 
+            }           
+        </select>
+    </h2>
+</form>
+
+

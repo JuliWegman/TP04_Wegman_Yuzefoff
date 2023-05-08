@@ -4,7 +4,10 @@
 
 <h2>Ir a <a href="SelectPaquete.cshtml">AGREGAR</a></h2>
 
-@forEach (string a in viewBag.Paquetes.Keys){
+@foreach(string a in ViewBag.Paquetes.Keys){
     <p>Paquete 1:</p>
-    <img src=@viewBag.a.Hotel>
+    
+    <img src=@ViewBag.Paquetes[a].Hotel height="5%" width="5%">
+    <img src=@ViewBag.Paquetes[a].Aereo height="5%" width="5%">
+    <img src=@ViewBag.Paquetes[a].Excursion height="5%" width="5%">
 }

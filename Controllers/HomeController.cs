@@ -11,6 +11,10 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult SelectPaquete(){
+        ViewBag.hoteles=OrtWorld.ListaHoteles;
+        ViewBag.aereos=OrtWorld.ListaAereos;
+        ViewBag.Excursiones=OrtWorld.ListaExcursiones;
+        ViewBag.destinos=OrtWorld.ListaDestinos;
         return View();
     }
 }
