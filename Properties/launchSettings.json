@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "TPBase": {
+    "TP04_Wegman_Yuzefoff": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
