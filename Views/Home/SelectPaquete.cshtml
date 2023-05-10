@@ -2,15 +2,38 @@
     ViewData["Title"] = "SelectPaquete";
 }
 <form>
-    <h2>
-        Elige un destino
-        <select>
-            @foreach (var item in ViewBag.destinos)
+    <div>
+    <h2>Elige un destino</h2>
+    <p>
+        <select name="destinoSeleccionado">
+            @foreach (int item in ViewBag.destinos)
             {
                <option value="@item"></option> 
             }           
         </select>
-    </h2>
+    </p>
+    </div>
+
+    <div>
+        <h2>Elegir uno de estos hotel: 
+        <select name="" id="">
+            @for (int j = 0; j < ViewBag.hoteles.length; j++)
+            {
+                <option value="hotel @j"></option>
+            }
+
+        </select>
+        </h2>
+        @{
+        int i=1;
+        foreach (int a in ViewBag.hoteles)
+        {
+            <p>Hotel @i :</p>
+            <img src=@a height="5%" width="5%">
+            i++;
+        }
+        }
+    </div>
 </form>
 
 

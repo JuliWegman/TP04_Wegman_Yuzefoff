@@ -2,12 +2,14 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Ir a <a href="SelectPaquete.cshtml">AGREGAR</a></h2>
-
-@foreach(string a in ViewBag.Paquetes.Keys){
+<h2>Ir a <a href='@Url.Action("SelectPaquete")'>AGREGAR</a></h2>
+@{
+    if(ViewBag.Paquetes!=null){
+foreach(string a in ViewBag.Paquetes.Keys){
     <p>Paquete 1:</p>
     
     <img src=@ViewBag.Paquetes[a].Hotel height="5%" width="5%">
     <img src=@ViewBag.Paquetes[a].Aereo height="5%" width="5%">
     <img src=@ViewBag.Paquetes[a].Excursion height="5%" width="5%">
+}}
 }
