@@ -1,39 +1,89 @@
 @{
     ViewData["Title"] = "SelectPaquete";
 }
-<form>
+@{if(ViewBag.existe==1){
+<h1>ESE DESTINO YA ESTÁ CUBIERTO, ELEGIR OTRO PARA PODER CONTINUAR</h1>
+}
+}
+<form action='@Url.Action("GuardarPaquete")'>
     <div>
     <h2>Elige un destino</h2>
-    <p>
+    
         <select name="destinoSeleccionado">
-            @foreach (int item in ViewBag.destinos)
+            @foreach (string item in ViewBag.destinos)
             {
-               <option value="@item"></option> 
+               <option value="@item">@item</option> 
             }           
         </select>
-    </p>
+    
     </div>
 
-    <div>
-        <h2>Elegir uno de estos hotel: 
-        <select name="" id="">
-            @for (int j = 0; j < ViewBag.hoteles.length; j++)
+    <h2>Elegir uno de estos hoteles: </h2>
+        <select name="HotelElegido">
+            @for (int j = 0; j < ViewBag.hoteles.Count; j++)
             {
-                <option value="hotel @j"></option>
+                <option value="@j">hotel @(j+1)</option>
             }
-
         </select>
-        </h2>
+    
         @{
         int i=1;
-        foreach (int a in ViewBag.hoteles)
+        foreach (string a in ViewBag.hoteles)
         {
-            <p>Hotel @i :</p>
-            <img src=@a height="5%" width="5%">
-            i++;
+            <div class="ñaña">
+            <p>hotel @i :</p>
+            
+            <img src=~/img/@a height="5%" width="5%">
+            @{i++;}
+            </div>
         }
         }
-    </div>
+    
+     <h2>Elegir uno de estos Aereos: </h2>
+        <select name="AereoElegido">
+            @for (int j = 0; j < ViewBag.aereos.Count; j++)
+            {
+                <option value="@j">aereo @(j+1)</option>
+            }
+        </select>
+    
+        @{
+        int ii=1;
+        foreach (string a in ViewBag.aereos)
+        {
+            <div class="ñaña">
+            <p>aereo @ii :</p>
+            
+            <img src=~/img/@a height="5%" width="5%">
+            @{ii++;}
+            </div>
+        }
+        }
+    
+    
+        <h2>Elegir una de estas Excursiones: </h2>
+        <select name="ExcursionElegido">
+            @for (int j = 0; j < ViewBag.excursiones.Count; j++)
+            {
+                <option value="@j">excursion @(j+1)</option>
+            }
+        </select>
+    
+        @{
+        int iii=1;
+        foreach (string a in ViewBag.excursiones)
+        {
+            <div class="ñaña">
+            <p>Excursion @iii :</p>
+            
+            <img src=~/img/@a height="5%" width="5%">
+            @{iii++;}
+            </div>
+        }
+        }
+        
+    <p><input type="submit" value="Subir paquete" ></p>
+    <br> <br>
 </form>
 
 

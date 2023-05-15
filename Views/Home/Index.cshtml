@@ -1,15 +1,17 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "TP04";
 }
 
 <h2>Ir a <a href='@Url.Action("SelectPaquete")'>AGREGAR</a></h2>
 @{
     if(ViewBag.Paquetes!=null){
+        int i=1;
 foreach(string a in ViewBag.Paquetes.Keys){
-    <p>Paquete 1:</p>
+    <h3>Paquete @i, con destino a @a</h3>
     
-    <img src=@ViewBag.Paquetes[a].Hotel height="5%" width="5%">
-    <img src=@ViewBag.Paquetes[a].Aereo height="5%" width="5%">
-    <img src=@ViewBag.Paquetes[a].Excursion height="5%" width="5%">
+    <img src=~/img/@ViewBag.Paquetes[a].Hotel height="250px" width="20%">
+    <img src=~/img/@ViewBag.Paquetes[a].Aereo height="250px" width="20%">
+    <img src=~/img/@ViewBag.Paquetes[a].Excursion height="250px" width="20%">
+    i++;
 }}
 }
