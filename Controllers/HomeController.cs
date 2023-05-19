@@ -19,9 +19,9 @@ public class HomeController : Controller
     }
     public IActionResult GuardarPaquete(string destinoSeleccionado, int HotelElegido, int AereoElegido, int ExcursionElegido)
     {
-         Paquete x = new Paquete(OrtWorld.ListaHoteles[HotelElegido],OrtWorld.ListaAereos[AereoElegido],OrtWorld.ListaExcursiones[ExcursionElegido]);
-         bool Existe=OrtWorld.IngresarPaquete(destinoSeleccionado,x);
-        if(Existe){
+        Paquete x = new Paquete(OrtWorld.ListaHoteles[HotelElegido],OrtWorld.ListaAereos[AereoElegido],OrtWorld.ListaExcursiones[ExcursionElegido]);
+        OrtWorld.Existe=OrtWorld.IngresarPaquete(destinoSeleccionado,x);
+        if(!OrtWorld.Existe){
         OrtWorld.Paquetes.Add(destinoSeleccionado,x);
         return RedirectToAction("Index");
         }else{
