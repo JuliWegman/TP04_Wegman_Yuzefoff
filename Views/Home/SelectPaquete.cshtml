@@ -1,8 +1,10 @@
 @{
     ViewData["Title"] = "SelectPaquete";
 }
-@{if(ViewBag.existe==1){
+@{if(OrtWorld.Existe){
+<div class="aviso">
 <h1>ESE DESTINO YA ESTÁ CUBIERTO, ELEGIR OTRO PARA PODER CONTINUAR</h1>
+</div>
 }
 }
 <form action='@Url.Action("GuardarPaquete")'>
@@ -82,7 +84,7 @@
         }
         }
         
-    <p><input type="submit" value="Subir paquete" ></p>
+    <p><input class="link" type="submit" value="Subir paquete"></p>
     <br> <br>
 </form>
 

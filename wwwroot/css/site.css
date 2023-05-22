@@ -1,19 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 html {
   font-size: 14px;
   position: relative;
   min-height: 100%;
 }
 
+
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-
+a{
+  text-decoration: none;
+}
 body {
   margin: 20px 60px 0px 20px;
+  font-family: 'Poppins', sans-serif;
+  
 }
-
 footer {
   position: fixed; 
   bottom: 0; 
@@ -30,3 +36,65 @@ div .ñaña img{
 select,h2{
   display: block;
 }
+
+div .paquete{
+  margin:38px auto;
+  
+  padding: 20px;
+  background-color: #D2D7DF;
+  border: 4px ridge black;border-radius: 1.5rem;;
+ width:66%;
+ position: relative;
+}
+div .paquete img{
+  width:33%;
+}
+div .paquete h3{
+  text-align: center;
+}
+div .aviso{
+  background-color: red;
+  padding: 20px;
+  margin:30px;
+  text-align: center;
+}
+.link {
+  font-size: 1.5rem;
+  width:20%;
+  margin :auto;
+  text-align: center;
+  background-color: #199319;
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  cursor: pointer;
+  border:2px solid black;
+  border-radius: 15px;
+  transition: all .2s;
+ 
+}
+.link:hover{
+  background-color: #fff;
+  color: #199319;
+  border:2px solid black;
+  border-radius: 15px;
+}
+
+button{
+  font-size: 10px;
+  background-color: #dd0d0d;
+ padding: 5px 20px;
+  cursor: pointer;
+  border-radius: 100%;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+button:hover{
+filter:brightness(.7);
+   border:2px solid black;
+  border-radius: 100%;
+}
+
+
+

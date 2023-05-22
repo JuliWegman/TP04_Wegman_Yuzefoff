@@ -4,12 +4,17 @@ public static List<string> ListaHoteles {get; private set;}=new List<string>{"Hi
 public static List<string> ListaAereos {get; private set;}=new List<string>{"aerolineas_argentinas.png", "Alaska Airlines.png", "British Airways.png", "Delta.png", "Ethiopian.png", "Japan Airlines.png","LAN.jfif", "Lufthansa.png","Singapur.png","turkish_airlines.png"};
 public static List<string> ListaExcursiones {get; private set;}=new List<string>{"lago.jpg", "playa.jpg", "montaña.jpg", "glaciar.jfif", "obelisko.jfif", "cataratas.jfif","cierro.jpg", "ciudad.jpg","cotur.jfif","turismo.jpg"};
 public static Dictionary<string, Paquete> Paquetes {get; private set;}=new Dictionary<string, Paquete>();
+
+public static bool Existe{get;set;}=false;
 public static bool IngresarPaquete(string destino, Paquete paquete)
 {
-    bool existe = true;
+    bool existe = false;
     if(Paquetes.Keys.Contains(destino)){
-        existe=false;
+        existe=true;
     }
     return existe;
+}
+public static void Borrar(string key){
+    Paquetes.Remove(key);
 }
 }
